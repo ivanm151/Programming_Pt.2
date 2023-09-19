@@ -27,7 +27,15 @@ namespace cs_Lab1_Medvedev_8I21
             listBoxCurrent.Items.Clear();
             try
             {
-                if (Range(textBoxLeft, textBoxRight, nums) == false) { return; }               
+                nums[0] = Convert.ToInt32(textBoxLeft.Text);
+                nums[1] = Convert.ToInt32(textBoxRight.Text);
+                if (nums[0] < 1 || nums[0] > 6 || nums[1] < 1 || nums[1] > 6)
+                {
+                    MessageBox.Show("Значением может быть только число от 1 до 6");
+                    textBoxLeft.Clear();
+                    textBoxRight.Clear();
+                    return;
+                }                                  
             }
             catch (Exception ex)
             {
@@ -89,20 +97,6 @@ namespace cs_Lab1_Medvedev_8I21
             listBoxGame.Items.Clear();
             buttonStart.Visible = true;
             buttonStep.Visible = false;
-        }
-        public bool Range(TextBox textBoxLeft1, TextBox textBoxRight1, int[] nums)
-        {
-            bool l = true;
-            nums[0] = Convert.ToInt32(textBoxLeft1.Text);
-            nums[1] = Convert.ToInt32(textBoxRight1.Text);
-            if (nums[0] < 1 || nums[0] > 6 || nums[1] < 1 || nums[1] > 6)
-            {
-                MessageBox.Show("Значением может быть только число от 1 до 6");
-                textBoxLeft1.Clear();
-                textBoxRight1.Clear();
-                l = false;
-            }
-            return l;
         }
     }
 }

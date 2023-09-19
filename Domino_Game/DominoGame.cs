@@ -24,6 +24,12 @@ namespace Domino_Game
         public int[] get_value()
         {
             return sides;
+        }   
+        public void turn()
+        {
+            int temp = sides[0];
+            sides[0] = sides[1];
+            sides[1] = temp;
         }
     }
 }

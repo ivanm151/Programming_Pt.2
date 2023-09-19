@@ -2,12 +2,14 @@
 using System;
 using Domino_Game;
 
+
 namespace DominoGame.Test
 {
     [TestClass]
     public class DominoTest
     {
         Domino domino;
+        Domino copy;
         Random rand;
 
 
@@ -16,6 +18,7 @@ namespace DominoGame.Test
         {
             domino = new Domino();
             rand = new Random();
+            copy = new Domino();
         }
 
         [TestMethod]
@@ -35,14 +38,15 @@ namespace DominoGame.Test
             domino.set_user_value(nums);
             Assert.AreEqual(nums.Length, domino.get_value().Length);
         }
-        /*
+        
         [TestMethod]
-        public void _test()
+        public void turn_test()
         {
-            
-            Assert.
-        }
-        */
+            copy.set_user_value(domino.get_value());
+            domino.turn();
+            Assert.AreEqual(domino.get_value()[0], copy.get_value()[1]);
+            Assert.AreEqual(domino.get_value()[1], copy.get_value()[0]);
+        }        
     }
 }
    
