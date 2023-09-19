@@ -46,7 +46,24 @@ namespace DominoGame.Test
             domino.turn();
             Assert.AreEqual(domino.get_value()[0], copy.get_value()[1]);
             Assert.AreEqual(domino.get_value()[1], copy.get_value()[0]);
-        }        
+        }
+        [TestMethod]
+        public void value_up_test()
+        {
+            copy.set_user_value(domino.get_value());
+            domino.value_up();
+            for (int i = 0; i < copy.get_value().Length; i++)
+            {
+                if (copy.get_value()[i] == 6)
+                {
+                    Assert.AreEqual(domino.get_value()[i], 6);
+                }
+                else
+                {
+                    Assert.AreEqual(domino.get_value()[i], (copy.get_value()[i] + 1));
+                }
+            }
+        }
     }
 }
    
