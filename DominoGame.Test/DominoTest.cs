@@ -1,8 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Domino_Game;
-using System.Windows.Forms;
-using cs_Lab1_Medvedev_8I21;
 
 namespace DominoGame.Test
 {
@@ -21,7 +19,7 @@ namespace DominoGame.Test
         }
 
         [TestMethod]
-        public void get_value_test()
+        public void Random_test()
         {
             int expected_range1 = 1;
             int expected_range2 = 6;
@@ -37,6 +35,14 @@ namespace DominoGame.Test
             domino.set_user_value(nums);
             Assert.AreEqual(nums.Length, domino.get_value().Length);
         }
+        /*
+        [TestMethod]
+        public void _test()
+        {
+            
+            Assert.
+        }
+        */
     }
 }
    

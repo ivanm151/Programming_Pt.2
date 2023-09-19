@@ -47,9 +47,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Windows.Forms.DataVisualization" />
-    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DominoTest.cs" />
@@ -59,10 +56,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\cs Lab1 Medvedev 8I21\cs Lab1 Medvedev 8I21.csproj">
-      <Project>{848b9878-dddb-41de-a803-a41a35855000}</Project>
-      <Name>cs Lab1 Medvedev 8I21</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Domino_Game\Domino_Game.csproj">
       <Project>{f7cce3ce-aa44-4017-b372-345dd06c41d9}</Project>
       <Name>Domino_Game</Name>
