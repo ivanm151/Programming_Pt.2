@@ -7,6 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="MainField" Background="LightCoral">
-
+        <Button x:Name="buttonGetUser" Content="Задать кость" HorizontalAlignment="Left" Margin="84,232,0,0" VerticalAlignment="Top" Click="buttonGetUser_Click"/>
+        <Button x:Name="buttonRand" Content="Задать случайные значения" HorizontalAlignment="Left" Margin="42,306,0,0" VerticalAlignment="Top" Click="buttonRand_Click"/>
+        <Button x:Name="buttonStep" Content="Сделать ход" HorizontalAlignment="Left" Margin="339,217,0,0" VerticalAlignment="Top" Click="buttonStep_Click"/>
+        <Button x:Name="buttonStart" Content="Начать" HorizontalAlignment="Left" Margin="352,242,0,0" VerticalAlignment="Top" Click="buttonStart_Click"/>
+        <Button x:Name="buttonNewGame" Content="Новая игра" HorizontalAlignment="Left" Margin="660,341,0,0" VerticalAlignment="Top" Click="buttonNewGame_Click"/>
+        <Label Content="Правая часть" HorizontalAlignment="Left" Margin="136,176,0,0" VerticalAlignment="Top"/>
+        <Label Content="Текущая кость" HorizontalAlignment="Left" Margin="329,25,0,0" VerticalAlignment="Top"/>
+        <Label Content="Левая часть" HorizontalAlignment="Left" Margin="23,176,0,0" VerticalAlignment="Top"/>
+        <Label Content="Игра" HorizontalAlignment="Left" Margin="675,25,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="listBoxGame" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="617,51,30,98"/>
+        <ListBox x:Name="listBoxCurrent" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="310,51,362,225"/>
+        <Image Source="C:\Users\ivmed\Downloads\48689_dom_0504.tif" HorizontalAlignment="Left" Height="151" Margin="23,25,0,0" VerticalAlignment="Top" Width="195" RenderTransformOrigin="0.552,0.524"/>
+        <TextBox x:Name="textBoxLeft" HorizontalAlignment="Left" Margin="10,202,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxRight" HorizontalAlignment="Left" Margin="148,202,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>
