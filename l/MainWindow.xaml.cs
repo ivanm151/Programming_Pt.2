@@ -26,8 +26,41 @@ namespace l
         public MainWindow()
         {
             InitializeComponent();
+
+            foreach(UIElement elem in MainField.Children)
+            {
+                if(elem is Button)
+                {
+                    ((Button)elem).Click += button_Click;
+                    ((Button)elem).Click -= button_Click;
+                }
+            }
         }
 
+
+        private void button_Click(object sender, RoutedEventArgs e) // switch
+        {
+            if ((string)((Button)e.OriginalSource).Name is "buttonNewGame") // Visiblity
+            {
+                ((Button)e.OriginalSource).Click += buttonNewGame_Click;
+            }
+            if ((string)((Button)e.OriginalSource).Name is "buttonGetUser")
+            {
+                ((Button)e.OriginalSource).Click += buttonGetUser_Click;
+            }
+            if ((string)((Button)e.OriginalSource).Name is "buttonRand")
+            {
+                ((Button)e.OriginalSource).Click += buttonRand_Click;
+            }
+            if ((string)((Button)e.OriginalSource).Name is "buttonStep")
+            {
+                ((Button)e.OriginalSource).Click += buttonStep_Click;
+            }
+            if ((string)((Button)e.OriginalSource).Name is "buttonStart")
+            {
+                ((Button)e.OriginalSource).Click += buttonStart_Click;
+            }
+        }
         private void buttonNewGame_Click(object sender, RoutedEventArgs e)
         {
             listBoxGame.Items.Clear();
