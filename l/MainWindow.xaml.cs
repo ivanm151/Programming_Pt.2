@@ -21,8 +21,8 @@ namespace l
     /// </summary>
     public partial class MainWindow : Window
     {
-        Domino obj;
-        Domino copy;
+        Domino obj = new Domino();
+        Domino copy = new Domino();
         public MainWindow()
         {
             InitializeComponent();
@@ -30,42 +30,30 @@ namespace l
             foreach(UIElement elem in MainField.Children)
             {
                 if(elem is Button)
-                {
+                {                    
                     ((Button)elem).Click += button_Click;
                     ((Button)elem).Click -= button_Click;
                 }
             }
         }
-
-
-        private void button_Click(object sender, RoutedEventArgs e) // switch
+        private void button_Click(object sender, RoutedEventArgs e) 
         {
-            if ((string)((Button)e.OriginalSource).Name is "buttonNewGame") // Visiblity
-            {
-                ((Button)e.OriginalSource).Click += buttonNewGame_Click;
-            }
-            if ((string)((Button)e.OriginalSource).Name is "buttonGetUser")
-            {
-                ((Button)e.OriginalSource).Click += buttonGetUser_Click;
-            }
-            if ((string)((Button)e.OriginalSource).Name is "buttonRand")
-            {
-                ((Button)e.OriginalSource).Click += buttonRand_Click;
-            }
-            if ((string)((Button)e.OriginalSource).Name is "buttonStep")
-            {
-                ((Button)e.OriginalSource).Click += buttonStep_Click;
-            }
-            if ((string)((Button)e.OriginalSource).Name is "buttonStart")
-            {
-                ((Button)e.OriginalSource).Click += buttonStart_Click;
-            }
+            if ((string)((Button)e.OriginalSource).Name is "buttonNewGame")             
+                ((Button)e.OriginalSource).Click += buttonNewGame_Click;                           
+            if ((string)((Button)e.OriginalSource).Name is "buttonGetUser")           
+                ((Button)e.OriginalSource).Click += buttonGetUser_Click;                           
+            if ((string)((Button)e.OriginalSource).Name is "buttonRand")            
+                ((Button)e.OriginalSource).Click += buttonRand_Click;                          
+            if ((string)((Button)e.OriginalSource).Name is "buttonStep")            
+                ((Button)e.OriginalSource).Click += buttonStep_Click;                           
+            if ((string)((Button)e.OriginalSource).Name is "buttonStart")            
+                ((Button)e.OriginalSource).Click += buttonStart_Click;                           
         }
         private void buttonNewGame_Click(object sender, RoutedEventArgs e)
         {
             listBoxGame.Items.Clear();
-            //buttonStart.Visible = true;
-            //buttonStep.Visible = false;
+            buttonStep.Visibility = Visibility.Hidden;
+            buttonStart.Visibility = Visibility.Visible;
         }
 
         private void buttonGetUser_Click(object sender, RoutedEventArgs e)
@@ -93,7 +81,7 @@ namespace l
             }
             obj.set_user_value(nums);
             listBoxCurrent.Items.Add(Convert.ToString(obj.get_value()[0]) + "-----" + Convert.ToString(obj.get_value()[1]));
-            //buttonStep.Enabled = true;
+            buttonStep.Visibility = Visibility.Visible;
         }
 
         private void buttonRand_Click(object sender, RoutedEventArgs e)
@@ -101,7 +89,7 @@ namespace l
             obj = new Domino();
             listBoxCurrent.Items.Clear();
             listBoxCurrent.Items.Add(Convert.ToString(obj.get_value()[0]) + "-----" + Convert.ToString(obj.get_value()[1]));
-            //buttonStep.Enabled = true;
+            buttonStep.IsEnabled = true;
         }
 
         private void buttonStep_Click(object sender, RoutedEventArgs e)
@@ -109,6 +97,11 @@ namespace l
             if (listBoxCurrent.Items.Count == 0)
             {
                 MessageBox.Show("Задайте кость!");
+                return;
+            }
+            if(listBoxGame.Items.Count == 0)
+            {
+                MessageBox.Show("Сначала начните игру!");
                 return;
             }
             if (obj.get_value()[0] == copy.get_value()[1] || obj.get_value()[1] == copy.get_value()[1])
@@ -122,7 +115,7 @@ namespace l
                 MessageBox.Show("Ход невозможен!");
                 listBoxCurrent.Items.Clear();
             }
-            //buttonStep.Enabled = false;
+            buttonStep.IsEnabled=false;
         }
 
         private void buttonStart_Click(object sender, RoutedEventArgs e)
@@ -135,9 +128,9 @@ namespace l
             copy = new Domino();
             copy.set_user_value(obj.get_value());
             listBoxGame.Items.Add(Convert.ToString(obj.get_value()[0]) + "-----" + Convert.ToString(obj.get_value()[1]));
-            listBoxCurrent.Items.Clear();
-            //buttonStart.Visible = false;
-            //buttonStep.Visible = true;
+            listBoxCurrent.Items.Clear();           
+            buttonStep.Visibility = Visibility.Visible;
+            buttonStart.Visibility = Visibility.Hidden;
         }
     }
 }
