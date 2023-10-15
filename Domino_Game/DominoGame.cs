@@ -33,7 +33,7 @@ namespace Domino_Game
         }
         public void value_up()
         {
-            int[] nums = this.get_value();
+            int[] nums = get_value();
             int[] new_nums = new int[nums.Length];
             for (int i = 0; i < nums.Length; i++) { new_nums[i] = nums[i]; }
             for (int i = 0; i < nums.Length; i++)
@@ -42,21 +42,14 @@ namespace Domino_Game
                 if (nums[i] < 6)
                 {                   
                     new_nums[i] = nums[i] + 1;
-                    this.set_user_value(new_nums);
+                    set_user_value(new_nums);
                 }
                 else
                 {
                     new_nums[i] = 6;
-                    this.set_user_value(new_nums);
+                    set_user_value(new_nums);
                 }
             }
-        }
-        /*
-        public void 
-        {
-
-        }
-        */
-            
+        }                 
     }
 }

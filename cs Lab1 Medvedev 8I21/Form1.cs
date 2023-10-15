@@ -35,7 +35,9 @@ namespace cs_Lab1_Medvedev_8I21
                     textBoxLeft.Clear();
                     textBoxRight.Clear();
                     return;
-                }                                  
+                }
+                obj.set_user_value(nums);
+                listBoxCurrent.Items.Add(Convert.ToString(obj.get_value()[0]) + "-----" + Convert.ToString(obj.get_value()[1]));
             }
             catch (Exception ex)
             {
@@ -43,8 +45,6 @@ namespace cs_Lab1_Medvedev_8I21
                 textBoxLeft.Clear();
                 textBoxRight.Clear();
             }
-            obj.set_user_value(nums);
-            listBoxCurrent.Items.Add(Convert.ToString(obj.get_value()[0]) + "-----" + Convert.ToString(obj.get_value()[1]));
             buttonStep.Enabled = true;
         }
 
@@ -63,8 +63,15 @@ namespace cs_Lab1_Medvedev_8I21
                 MessageBox.Show("Задайте кость!");
                 return;
             }
+            if (listBoxGame.Items.Count == 0)
+            {
+                MessageBox.Show("Сначала начните игру!");
+                return;
+            }
             if (obj.get_value()[0] == copy.get_value()[1] || obj.get_value()[1] == copy.get_value()[1])
             {
+                if (obj.get_value()[1] == copy.get_value()[1])
+                    obj.turn();
                 copy.set_user_value(obj.get_value());
                 listBoxGame.Items.Add(Convert.ToString(obj.get_value()[0]) + "-----" + Convert.ToString(obj.get_value()[1]));
                 listBoxCurrent.Items.Clear();
@@ -91,7 +98,7 @@ namespace cs_Lab1_Medvedev_8I21
             buttonStart.Visible = false;
             buttonStep.Visible = true;
         }
-
+        
         private void buttonNewGame_Click(object sender, EventArgs e)
         {
             listBoxGame.Items.Clear();

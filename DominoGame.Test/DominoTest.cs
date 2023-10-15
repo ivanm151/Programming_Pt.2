@@ -33,12 +33,12 @@ namespace DominoGame.Test
 
         [TestMethod]
         public void set_user_value_test()
-        {          
+        {
             int[] nums = new int[2] { rand.Next(1, 7), rand.Next(1, 7) };
             domino.set_user_value(nums);
             Assert.AreEqual(nums.Length, domino.get_value().Length);
         }
-        
+
         [TestMethod]
         public void turn_test()
         {
@@ -63,6 +63,11 @@ namespace DominoGame.Test
                     Assert.AreEqual(domino.get_value()[i], (copy.get_value()[i] + 1));
                 }
             }
+        }
+        [TestMethod]
+        public void not_null_test()
+        {
+            Assert.IsNotNull(domino.get_value()); 
         }
     }
 }
