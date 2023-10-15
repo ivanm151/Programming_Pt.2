@@ -20,6 +20,12 @@ namespace WpfLibraryLAB3
         public int[] get_value()
         {
             return sides;
-        }        
+        }    
+        public void swap_sides()
+        {
+            int temp = sides[0];
+            sides[0] = sides[1];
+            sides[1] = temp;
+        }
     }
 }

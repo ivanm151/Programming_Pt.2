@@ -72,6 +72,8 @@ namespace l
                     textBoxRight.Clear();
                     return;
                 }
+                obj.set_user_value(nums);
+                listBoxCurrent.Items.Add(Convert.ToString(obj.get_value()[0]) + "-----" + Convert.ToString(obj.get_value()[1]));                
             }
             catch (Exception ex)
             {
@@ -79,8 +81,7 @@ namespace l
                 textBoxLeft.Clear();
                 textBoxRight.Clear();
             }
-            obj.set_user_value(nums);
-            listBoxCurrent.Items.Add(Convert.ToString(obj.get_value()[0]) + "-----" + Convert.ToString(obj.get_value()[1]));
+            buttonStep.IsEnabled = true;
             buttonStep.Visibility = Visibility.Visible;
         }
 
@@ -106,10 +107,12 @@ namespace l
             }
             if (obj.get_value()[0] == copy.get_value()[1] || obj.get_value()[1] == copy.get_value()[1])
             {
+                if (obj.get_value()[1] == copy.get_value()[1])                
+                    obj.swap_sides();                
                 copy.set_user_value(obj.get_value());
                 listBoxGame.Items.Add(Convert.ToString(obj.get_value()[0]) + "-----" + Convert.ToString(obj.get_value()[1]));
                 listBoxCurrent.Items.Clear();
-            }
+            }            
             else
             {
                 MessageBox.Show("Ход невозможен!");
