@@ -1,0 +1,25 @@
+﻿<Window x:Class="Lab_4.View.Start"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab_4.View"
+        mc:Ignorable="d"
+        Title="Start" Height="450" Width="800">
+    <Grid>
+        <Label Content="Выберите процент правильных ответов, &#xD;&#xA;при котором тест будет считаться пройденным:" HorizontalAlignment="Left" Margin="36,119,0,0" VerticalAlignment="Top" Height="41" Width="282"/>
+        <Label Content="Выберите количество вопросов:" HorizontalAlignment="Left" Margin="36,76,0,0" VerticalAlignment="Top"/>
+        <Label Content="Тест" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.561,0.822">
+            <Label.Style>
+                <Style/>
+            </Label.Style>
+        </Label>
+        <Button x:Name="buttonStart" Content="Начать" HorizontalAlignment="Center" Margin="0,197,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="SliderCount" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="120" Minimum="1" Maximum="15" TickPlacement="TopLeft" SmallChange="1" IsSnapToTickEnabled="True"/>
+        <Slider x:Name="SliderRight" HorizontalAlignment="Center" Margin="0,142,0,0" VerticalAlignment="Top" Width="120" LargeChange="10" Maximum="100" SmallChange="10" Cursor="" TickPlacement="TopLeft" IsSnapToTickEnabled="True"/>
+        <Label Content="%" HorizontalAlignment="Left" Margin="526,142,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TextBlockCount" HorizontalAlignment="Left" Margin="495,89,0,0" TextWrapping="Wrap" Text="{Binding Path=Value, ElementName=SliderCount}" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="477,146,0,0" TextWrapping="Wrap" Text="{Binding Path=Value, ElementName=SliderRight}" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
