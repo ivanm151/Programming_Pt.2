@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="Finish" Height="450" Width="800">
     <Grid>
-        
+        <Label Content="Результат:" HorizontalAlignment="Left" Margin="71,63,0,0" VerticalAlignment="Top"/>
+        <Label Content="Подробный отчет:" HorizontalAlignment="Left" Margin="71,150,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="ListBoxResult" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="187,151,465,49"/>
+        <TextBlock x:Name="TextBlockResult" HorizontalAlignment="Left" Margin="172,68,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="119"/>
+        <Image x:Name="ImageResult" HorizontalAlignment="Left" Height="100" Margin="252,33,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="ButtonFinish" Content="Завершить" HorizontalAlignment="Left" Margin="526,330,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
