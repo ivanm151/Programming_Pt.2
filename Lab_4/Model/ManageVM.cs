@@ -22,7 +22,11 @@ namespace Lab_4.Model
         }
         public ManageVM()
         {
-
+            for(int i = 0; i < test.Count; i++)
+            {
+                test.Tasks[i].Path = "";
+                i++;
+            }
         }
         
 
