@@ -11,6 +11,21 @@ namespace Lab_4.Model
     public class ManageVM : INotifyPropertyChanged
     {
         private Test test;
+        public Test Test
+        {
+            get { return test; }
+            set
+            {
+                test = value;
+                OnPropertyChanged("Test");
+            }
+        }
+        public ManageVM()
+        {
+
+        }
+        
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
