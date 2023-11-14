@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Lab_4.View;
+using Lab_4.VM;
 
 namespace Lab_4.View
 {
@@ -23,5 +25,7 @@ namespace Lab_4.View
         {
             InitializeComponent();
         }
+
+       
     }
 }
