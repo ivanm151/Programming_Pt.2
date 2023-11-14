@@ -23,6 +23,7 @@ namespace Lab_4.View
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }

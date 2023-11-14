@@ -22,7 +22,7 @@ namespace Lab_4.VM
                 OnPropertyChanged("Test");
             }
         }
-        public ManageVM()
+        /*public ManageVM()
         {
             for (int i = 0; i < test.Count; i++)
             {
@@ -30,7 +30,7 @@ namespace Lab_4.VM
                 i++;
             }
         }
-
+        */
         private void OpenMainWindow()
         {
             MainWindow mainWindow = new MainWindow();
@@ -43,10 +43,10 @@ namespace Lab_4.VM
 
 
         public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        public void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
