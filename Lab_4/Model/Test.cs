@@ -15,7 +15,7 @@ namespace Lab_4.Model
     {
         private int count;     
         private int right;
-        private int success;
+        //private int success;
         private List<Task> tasks;
 
         public int Count
@@ -36,7 +36,7 @@ namespace Lab_4.Model
                 OnPropertyChanged("Right");
             }
         }
-        public int ButtonNum
+        /*public int ButtonNum
         {
             get { return success; }
             set
@@ -45,6 +45,7 @@ namespace Lab_4.Model
                 OnPropertyChanged("Success");
             }
         }
+        */
         public List<Task> Tasks
         {
             get { return tasks; }

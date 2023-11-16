@@ -1,7 +1,5 @@
-﻿
-using System.Windows;
+﻿using System.Windows;
 using Lab_4.VM;
-
 namespace Lab_4.View
 {
     /// <summary>
@@ -12,7 +10,7 @@ namespace Lab_4.View
         public Start()
         {
             InitializeComponent();
-            DataContext = new ManageVM();
+            DataContext = new StartVM();
         }
 
        
