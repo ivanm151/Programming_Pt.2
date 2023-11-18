@@ -15,6 +15,7 @@ namespace Lab_4.Model
         private string path;
         private int param_num;
         private int button_num;
+        private List<string> answers;
 
         public int Id
         {
@@ -50,6 +51,15 @@ namespace Lab_4.Model
             {
                 button_num = value;
                 OnPropertyChanged("ButtonNum");
+            }
+        }
+        public List<string> Answers
+        {
+            get { return answers; }
+            set
+            {
+                answers = value;
+                OnPropertyChanged("Answers");
             }
         }
 
