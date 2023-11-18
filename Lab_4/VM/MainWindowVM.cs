@@ -30,22 +30,31 @@ namespace Lab_4.VM
             {
                 Task task = new Task {Id = i, Path = paths[i]};
 
-                if (i == 3 || i == 8)
-                {
-                    task.ButtonNum = 2;
-                    if (i == 3) { task.ParamNum = 1; }
-                    else { task.ParamNum = 0; }
-                }
+                if (i == 3 || i == 8) { task.ButtonNum = 2; }                
                 else { task.ButtonNum = 4; }
 
-                if (i == 3 || i == 11 || i == 12 || i == 15) { task.ParamNum = 1; }
+                if (i == 3 || i == 12) { task.Paramtrs.Add("a"); };
+                if (i == 11 || i == 15) { task.Paramtrs.Add("r"); };
+                if (i == 6) { task.Paramtrs.Add("a"); task.Paramtrs.Add("b"); };
+                if (i == 13) { task.Paramtrs.Add("r"); task.Paramtrs.Add("h"); };
+                if (i == 14) { task.Paramtrs.Add("B"); task.Paramtrs.Add("C"); };
+                if (i == 1 || i == 2 || i == 4 || i == 5 || i == 9 || i == 10)
+                {
+                    task.Paramtrs.Add("a"); task.Paramtrs.Add("b"); task.Paramtrs.Add("c");
+                }
+                // 7-матрица
+                // answers
 
                 Testik.Tasks.Add(task);
-            }
-            
+            }   
+        }
+        public void FillParam()
+        {
 
-            
-            
+        }
+        public void Answers()
+        {
+
         }
 
 

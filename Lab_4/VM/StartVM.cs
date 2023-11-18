@@ -5,8 +5,8 @@ namespace Lab_4.VM
 {
     public class StartVM : INotifyPropertyChanged
     {
-        private int count;
-        private int right;
+        public int count;
+        public int right;
 
         public int Count
         {

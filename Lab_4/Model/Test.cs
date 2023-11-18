@@ -16,7 +16,7 @@ namespace Lab_4.Model
         private int count;     
         private int right;
         //private int success;
-        private List<Task> tasks;
+        private List<Task> tasks = new();
 
         public int Count
         {

@@ -12,10 +12,10 @@ namespace Lab_4.Model
     {
         
         private int id;
-        private string path;
-        private int param_num;
+        private string path = "";
+        private List<string> paramtrs = new();
         private int button_num;
-        private List<string> answers;
+        //private List<string> answers = new();
 
         public int Id
         {
@@ -35,13 +35,13 @@ namespace Lab_4.Model
                 OnPropertyChanged("Path");
             }
         }
-        public int ParamNum
+        public List<string> Paramtrs
         {
-            get { return param_num; }
+            get { return paramtrs; }
             set
             {
-                param_num = value;
-                OnPropertyChanged("ParamNum");
+                paramtrs = value;
+                OnPropertyChanged("Paramtrs");
             }
         }
         public int ButtonNum
@@ -53,7 +53,7 @@ namespace Lab_4.Model
                 OnPropertyChanged("ButtonNum");
             }
         }
-        public List<string> Answers
+        /*public List<string> Answers
         {
             get { return answers; }
             set
@@ -61,7 +61,7 @@ namespace Lab_4.Model
                 answers = value;
                 OnPropertyChanged("Answers");
             }
-        }
+        }*/
 
 
 
