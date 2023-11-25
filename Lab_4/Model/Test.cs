@@ -18,7 +18,7 @@ namespace Lab_4.Model
         //private int success;
         public List<Task> Tasks { get; set; }
 
-        public Test() { }
+        //public Test() { }
         public Test(int count, int right, List<Task> tasks)
         {
             Count = count;

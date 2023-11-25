@@ -10,11 +10,13 @@ namespace Lab_4.VM
 {
     public class StartVM : VM1
     {
-        public int count;
-        public int right;
+        private int count;
+        private int right;
         private bool isMainWindowOpen = false;
         private ICommand openMainWindowCommand;
 
+        public int Count { get { return count; } set { count = value; } }
+        public int Right { get { return right; } set { right = value; } }
         public ICommand OpenMainWindowCommand
         {
             get
@@ -40,28 +42,8 @@ namespace Lab_4.VM
         }
         public StartVM()
         {
-
-        }
-
-        /*public int Count
-        {
-            get { return count; }
-            set
-            {
-                count = value;
-                OnPropertyChanged("Count");
-            }
-        }
-        public int Right
-        {
-            get { return right; }
-            set
-            {
-                right = value;
-                OnPropertyChanged("Right");
-            }
-        }*/
-
-        
+            Count = new int();
+            Right = new int();
+        }       
     }
 }
