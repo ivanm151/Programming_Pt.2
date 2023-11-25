@@ -8,69 +8,22 @@ using System.Threading.Tasks;
 
 namespace Lab_4.Model
 {
-    public class Task : INotifyPropertyChanged
+    public class Task 
     {
         
-        private int id;
-        private string path = "";
-        private List<string> paramtrs = new();
-        private int button_num;
+        public int Id { get; set; }
+        public string Path { get; set; }
+        public List<string> Paramtrs { get; set; }
+        public int ButtonNum { get; set; }
         //private List<string> answers = new();
 
-        public int Id
+        public Task() { }
+        public Task(int id, string path, List<string> paramtrs, int buttonNum)
         {
-            get { return id; }
-            set
-            {
-                id = value;
-                OnPropertyChanged("Id");
-            }
-        }
-        public string Path
-        {
-            get { return path; }
-            set
-            {
-                path = value;
-                OnPropertyChanged("Path");
-            }
-        }
-        public List<string> Paramtrs
-        {
-            get { return paramtrs; }
-            set
-            {
-                paramtrs = value;
-                OnPropertyChanged("Paramtrs");
-            }
-        }
-        public int ButtonNum
-        {
-            get { return button_num; }
-            set
-            {
-                button_num = value;
-                OnPropertyChanged("ButtonNum");
-            }
-        }
-        /*public List<string> Answers
-        {
-            get { return answers; }
-            set
-            {
-                answers = value;
-                OnPropertyChanged("Answers");
-            }
-        }*/
-
-
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            Id = id;
+            Path = path;
+            Paramtrs = paramtrs;
+            ButtonNum = buttonNum;
         }
     }
 }

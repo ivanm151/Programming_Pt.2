@@ -14,7 +14,7 @@
                 <Style/>
             </Label.Style>
         </Label>
-        <Button x:Name="buttonStart" Content="Начать" HorizontalAlignment="Center" Margin="0,197,0,0" VerticalAlignment="Top" />
+        <Button x:Name="buttonStart" Content="Начать" Command="{Binding OpenMainWindowCommand}" HorizontalAlignment="Center" Margin="0,197,0,0" VerticalAlignment="Top" />
         <Slider x:Name="SliderCount" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="120" Minimum="1" Maximum="15" TickPlacement="TopLeft" SmallChange="1" IsSnapToTickEnabled="True"/>
         <Slider x:Name="SliderRight" HorizontalAlignment="Center" Margin="0,142,0,0" VerticalAlignment="Top" Width="120" LargeChange="10" Maximum="100" SmallChange="10" Cursor="" TickPlacement="TopLeft" IsSnapToTickEnabled="True"/>
         <Label Content="%" HorizontalAlignment="Left" Margin="526,142,0,0" VerticalAlignment="Top"/>

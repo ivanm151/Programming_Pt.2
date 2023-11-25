@@ -10,8 +10,14 @@ namespace Lab_4.Command
   
     public class Relay : ICommand
     {
-        private Action<object> execute;
-        private Func<object, bool> canExecute;
+        private readonly Action execute;
+        private readonly Func<bool> canExecute;
+
+        public Relay(Action execute, Func<bool> canExecute = null)
+        {
+            this.execute = execute ?? throw new ArgumentNullException(nameof(execute));
+            this.canExecute = canExecute;
+        }
 
         public event EventHandler CanExecuteChanged
         {
@@ -19,20 +25,14 @@ namespace Lab_4.Command
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public Relay(Action<object> execute, Func<object, bool> canExecute = null)
-        {
-            this.execute = execute;
-            this.canExecute = canExecute;
-        }
-
         public bool CanExecute(object parameter)
         {
-            return this.canExecute == null || this.canExecute(parameter);
+            return canExecute == null || canExecute();
         }
 
         public void Execute(object parameter)
         {
-            this.execute(parameter);
+            execute();
         }
     }
 }

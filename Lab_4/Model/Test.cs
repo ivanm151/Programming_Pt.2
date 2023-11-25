@@ -11,56 +11,19 @@ using static System.Net.Mime.MediaTypeNames;
 namespace Lab_4.Model
 {
    
-    public class Test : INotifyPropertyChanged
+    public class Test 
     {
-        private int count;     
-        private int right;
+        public int Count { get; set; }     
+        public int Right { get; set; }
         //private int success;
-        private List<Task> tasks = new();
+        public List<Task> Tasks { get; set; }
 
-        public int Count
+        public Test() { }
+        public Test(int count, int right, List<Task> tasks)
         {
-            get { return count; }
-            set
-            {
-                count = value;
-                OnPropertyChanged("Count");
-            }
-        }      
-        public int Right
-        {
-            get { return right; }
-            set
-            {
-                right = value;
-                OnPropertyChanged("Right");
-            }
-        }
-        /*public int ButtonNum
-        {
-            get { return success; }
-            set
-            {
-                success = value;
-                OnPropertyChanged("Success");
-            }
-        }
-        */
-        public List<Task> Tasks
-        {
-            get { return tasks; }
-            set
-            {
-                tasks = value;
-                OnPropertyChanged("Tasks");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            Count = count;
+            Right = right;
+            Tasks = tasks;
         }
     }
 }

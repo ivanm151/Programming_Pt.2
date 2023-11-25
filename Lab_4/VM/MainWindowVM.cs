@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
+
 namespace Lab_4.VM
 {
-    public class MainWindowVM : INotifyPropertyChanged
+    public class MainWindowVM : VM1
     {       
         private Test testik;
         public Test Testik
@@ -17,7 +18,7 @@ namespace Lab_4.VM
                 OnPropertyChanged("Testik");
             }
         }
-        public MainWindowVM()
+        /*public MainWindowVM()
         {
             List<string> paths = new List<string>();
             for (int i = 1; i < 16; i++)
@@ -26,7 +27,7 @@ namespace Lab_4.VM
             }
 
             Testik = new Test { Count = 4, Right = 4 /*получить значения из StartVM*/ };
-            for (int i = 1; i < Testik.Count; i++)
+            /*for (int i = 1; i < Testik.Count; i++)
             {
                 Task task = new Task {Id = i, Path = paths[i]};
 
@@ -56,14 +57,9 @@ namespace Lab_4.VM
         {
 
         }
+            */
 
 
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
-    }
+        
+    
 }
