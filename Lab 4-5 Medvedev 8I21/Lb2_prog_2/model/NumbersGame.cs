@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 namespace Lab_4_5.model
@@ -21,10 +20,10 @@ namespace Lab_4_5.model
             public string number { get; set; }
             public bool isNotPressed { get; set; }
         }
-        // Список символов достыхных для набора слова
+        
         private ObservableCollection<Number> numbers;
         public ReadOnlyObservableCollection<Number> Numbers { get; }
-        // Список введённых слов, которые прошли проверку
+        
         private ObservableCollection<string> numList;
         public ReadOnlyObservableCollection<string> NumList { get; }
         private ObservableCollection<string> guess;
@@ -34,12 +33,11 @@ namespace Lab_4_5.model
 
 
 
-       
+
         public NumGame()
         {
             gs = 1;
             Gs = gs;
-            
             guess = new ObservableCollection<string>();
             Guess = new ReadOnlyObservableCollection<string>(this.guess);
             numbers = new ObservableCollection<Number>();
@@ -53,7 +51,7 @@ namespace Lab_4_5.model
         {
             if (num < 4 || num > NumsLimit())
                 return false;
-            
+
             for (int i = 0; i < numbers.Count; i++)
             {
                 Number letter = numbers[i];
@@ -82,12 +80,11 @@ namespace Lab_4_5.model
                 CheckGs(s);
             }
         }
-       
         public bool PressLetter(int id)
         {
             if (id >= 0 && id < numbers.Count)
             {
-                var l = numbers[id];                
+                var l = numbers[id];
                 CheckWord(l.number);
                 l.isNotPressed = false;
                 numbers[id] = l;
@@ -104,23 +101,23 @@ namespace Lab_4_5.model
             }
             else
                 return false;
-        }       
+        }
         public bool CheckWord(string word)
         {
             if (!numList.Contains(word) && guess.Contains(word))
-            {               
+            {
                 numList.Add(word);
                 return true;
-            }            
+            }
             return false;
-        }   
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
-    }   
+    }
     class BigGame : NumGame
     {
         public BigGame() : base() { }
@@ -165,25 +162,6 @@ namespace Lab_4_5.model
             return game.UpLimit() + 100;
         }
     }
-    public class Versi : INotifyPropertyChanged
-    {
-        private int vers;
-        public int Vers
-        {
-            get { return vers; }
-            set
-            {
-                vers = value;
-                OnPropertyChanged("Vers");
-            }
-        }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
-    }
 
 }

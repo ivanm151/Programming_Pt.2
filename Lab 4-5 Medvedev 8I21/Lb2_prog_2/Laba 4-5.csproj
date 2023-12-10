@@ -55,11 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Command.cs" />
-    <Compile Include="NumberButton.cs" />
+    <Compile Include="Command\Command.cs" />
+    <Compile Include="model\NumberButton.cs" />
     <Compile Include="model\NumbersGame.cs" />
-    <Compile Include="NumbersGameVM.cs" />
-    <Page Include="MainWindow.xaml">
+    <Compile Include="ViewModel\NumbersGameVM.cs" />
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -67,11 +67,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="WordGameDictionary.xaml">
+    <Page Include="View\WordGameDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
