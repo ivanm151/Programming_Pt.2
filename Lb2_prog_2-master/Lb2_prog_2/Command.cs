@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace Lb2_prog_2
+namespace Lab_4_5
 {
     public class Command : ICommand
     {

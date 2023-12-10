@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace Lb2_prog_2
+namespace Lab_4_5
 {
     internal class NumberButton : Button
     {        

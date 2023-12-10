@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Lb2_prog_2
+namespace Lab_4_5
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml

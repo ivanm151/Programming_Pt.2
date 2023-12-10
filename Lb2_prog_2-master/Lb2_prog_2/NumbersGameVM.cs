@@ -3,9 +3,9 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Documents;
-using Lb2_prog_2.model;
+using Lab_4_5.model;
 
-namespace Lb2_prog_2
+namespace Lab_4_5
 {
     internal class NumbersGameVM : INotifyPropertyChanged
     {
