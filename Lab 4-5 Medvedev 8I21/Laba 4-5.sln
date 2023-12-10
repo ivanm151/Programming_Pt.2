@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laba 4-5", "Lb2_prog_2\Laba 4-5.csproj", "{B897FE5C-2E9E-403E-97E2-3B7082961C16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{07AC743D-C8BA-4428-90DA-7B7AC159355B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,26 @@ Global
 		{B897FE5C-2E9E-403E-97E2-3B7082961C16}.Release|x64.Build.0 = Release|Any CPU
 		{B897FE5C-2E9E-403E-97E2-3B7082961C16}.Release|x86.ActiveCfg = Release|Any CPU
 		{B897FE5C-2E9E-403E-97E2-3B7082961C16}.Release|x86.Build.0 = Release|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Debug|ARM.Build.0 = Debug|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Debug|x64.Build.0 = Debug|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Debug|x86.Build.0 = Debug|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Release|ARM.ActiveCfg = Release|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Release|ARM.Build.0 = Release|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Release|ARM64.Build.0 = Release|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Release|x64.ActiveCfg = Release|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Release|x64.Build.0 = Release|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Release|x86.ActiveCfg = Release|Any CPU
+		{07AC743D-C8BA-4428-90DA-7B7AC159355B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
