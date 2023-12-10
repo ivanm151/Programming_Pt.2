@@ -11,10 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using WpfApp12.VM;
+using System.Windows.Shapes;
+using LR_4_5.ViewModel;
 
-
-namespace WpfApp12
+namespace LR_4_5.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,7 +24,7 @@ namespace WpfApp12
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new TestViewModel();
+            DataContext = new GameVM();
         }
     }
 }
